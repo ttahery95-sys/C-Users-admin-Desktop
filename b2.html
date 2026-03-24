@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.5em;
+      max-width: 600px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+    .heart {
+      font-size: 50px;
+      animation: beat 1s infinite;
+      display: inline-block;
+      margin: 20px 0;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    button {
+      background: #fff;
+      color: #ff6b81;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff6b81;
+      color: white;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>For My Love ❤️</h1>
+
+    <div class="heart">💖</div>
+
+    <p>
+      From the moment I met you, my world became brighter.  
+      Every smile, every laugh, every moment with you is my favorite.  
+      You are my today and all of my tomorrows.
+    </p>
+
+    <button onclick="showMessage()">Click Me 💌</button>
+
+    <p id="hiddenMessage" style="display:none; margin-top:20px;">
+      I love you more than words can ever say. ❤️
+    </p>
+
+    <footer>
+      Made with love 💕
+    </footer>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("hiddenMessage").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
