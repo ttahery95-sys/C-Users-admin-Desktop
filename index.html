@@ -119,11 +119,7 @@
             <h3>2KD Engine</h3>
             <p>Reliable and powerful diesel engine.</p>
         </div>
-<div class="card">
-    <img src="images/4ja1.jpg" alt="4JA1 Engine">
-    <h3>4JA1 Engine</h3>
-    <p>Durable and fuel-efficient diesel engine, widely known for its reliability in tough conditions.</p>
-</div>
+
         <div class="card">
             <img src="images/2l.jfif" alt="2L Engine">
             <h3>2L Engine</h3>
@@ -148,10 +144,14 @@
 
 <div class="contact" id="contact">
     <h2>Contact Us</h2>
+
     <a href="https://wa.me/971569086512">📱 WhatsApp</a>
     <a href="tel:+971569086512">📞 Call Us</a>
     <a href="#">🎵 TikTok</a>
     <a href="#">📸 Instagram</a>
+
+    <!-- NEW LOCATION LINK -->
+    <a href="#" onclick="sendLocation()">📍 Share My Location</a>
 
     <p>We sell with customer presence and trust.</p>
 </div>
@@ -159,6 +159,26 @@
 <footer>
     <p>© 2026 Bait-Al-Shaeen | All Rights Reserved</p>
 </footer>
+
+<!-- LOCATION SCRIPT -->
+<script>
+function sendLocation() {
+    if (!navigator.geolocation) {
+        alert("Geolocation not supported");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(function(pos) {
+        let lat = pos.coords.latitude;
+        let lon = pos.coords.longitude;
+
+        let url = "https://maps.app.goo.gl/dYFM7v6i4RFBZRdFA?g_st=aw=" + lat + "," + lon;
+        window.open(url, "_blank");
+    }, function() {
+        alert("Unable to get location");
+    });
+}
+</script>
 
 </body>
 </html>
