@@ -148,7 +148,41 @@
 
 <div class="contact" id="contact">
     <h2>Contact Us</h2>
+<h2>Get Your Location</h2>
+<button onclick="getLocation()">Show My Location</button>
 
+<p id="output"></p>
+
+<script>
+function getLocation() {
+  const output = document.getElementById("output");
+
+  if (!navigator.geolocation) {
+    output.innerHTML = "Geolocation is not supported by your browser.";
+    return;
+  }
+
+  output.innerHTML = "Locating...";
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+
+      output.innerHTML = `
+        Latitude: ${lat} <br>
+        Longitude: ${lon} <br>
+        <a href="https://maps.app.goo.gl/dYFM7v6i4RFBZRdFA?g_st=aw=${lat},${lon}" target="_blank">
+          View on Google Maps
+        </a>
+      `;
+    },
+    () => {
+      output.innerHTML = "Unable to retrieve your location.";
+    }
+  );
+}
+</script>
     <!-- Replace links with your real details -->
     <a href="https://wa.me/971569086512">📱 WhatsApp</a>
     <a href="tel:+971569086512">📞 Call Us</a>
